@@ -63,7 +63,7 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top header-scrolled mb-5">
       <div class="container d-flex align-items-center justify-content-between">
-        <div class="logo d-flex align-items-center ">
+        <div class="logo d-flex align-items-center">
           <!-- <a href="index.html">&lt;&#931;&#1019;anuel/&gt;</a> -->
           <a href="index.html"
             ><img
@@ -72,12 +72,12 @@
               class="img-fluid w-25 rounded-circle"
             />
           </a>
-          <p style="margin-left: -160px;" class="text-white">&lt;&#931;&#1019;anuel/&gt; <br>
-                      <a  href="assets/files/resume.pdf" download>
-            Download Resume <i class="bi bi-download"></i>
-          </a>
+          <p style="margin-left: -160px" class="text-white">
+            &lt;&#931;&#1019;anuel/&gt; <br />
+            <a href="assets/files/resume.pdf" download>
+              Download Resume <i class="bi bi-download"></i>
+            </a>
           </p>
-
         </div>
 
         <nav id="navbar" class="navbar">
@@ -392,15 +392,10 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="title-box-2">
-                        <h5 class="title-left">Send Message Us</h5>
+                        <h5 class="title-left">Message Me</h5>
                       </div>
                       <div>
-                        <form
-                          action="#"
-                          method="post"
-                          role="form"
-                          class="php-email-form"
-                        >
+                        <form action="#" method="post" role="form" class="">
                           <div class="row">
                             <div class="col-md-12 mb-3">
                               <div class="form-group">
@@ -417,6 +412,7 @@
                             <div class="col-md-12 mb-3">
                               <div class="form-group">
                                 <input
+                                  onchange="validateEmail()"
                                   type="email"
                                   class="form-control"
                                   name="email"
@@ -424,6 +420,7 @@
                                   placeholder="Your Email"
                                   required
                                 />
+                                <span id="emailError"></span>
                               </div>
                             </div>
                             <div class="col-md-12 mb-3">
@@ -443,22 +440,18 @@
                                 <textarea
                                   class="form-control"
                                   name="message"
+                                  id="message"
                                   rows="5"
                                   placeholder="Message"
                                   required
                                 ></textarea>
                               </div>
                             </div>
-                            <div class="col-md-12 text-center my-3">
-                              <div class="loading">Loading</div>
-                              <div class="error-message"></div>
-                              <div class="sent-message">
-                                Your message has been sent. Thank you!
-                              </div>
-                            </div>
-                            <div class="col-md-12 text-center">
+
+                            <div class="col-md-12 text-center mt-3">
                               <button
                                 type="submit"
+                                onclick="submitContactForm()"
                                 class="button button-a button-big button-rouded"
                               >
                                 Send Message
