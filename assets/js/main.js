@@ -272,11 +272,12 @@ const submitContactForm = () => {
     document.getElementById("emailError").innerHTML =
       "Please enter a valid email address.";
   } else {
-    alert("Form submitted successfully!");
+    //alert("Form submitted successfully!");
+    form.addEventListener("submit", handleSubmit);
     // window.location.href = "ticket.html";
   }
   //handleSubmit()
-  form.addEventListener("submit", handleSubmit);
+  
 };
 
 let form = document.getElementById("my-form");
